@@ -1,0 +1,35 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2019-01-30 19:14-0500\n"
+"Mime-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: fr\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#: src/about/About.jsx:7
+#~ msgid "About page"
+#~ msgstr "À propos"
+
+#: src/about/About.jsx:10
+#: src/about/About.jsx:11
+msgid "About page!!!!!!"
+msgstr "À propos!!!!!!"
+
+#: src/home/Home.jsx:8
+msgid "Home page"
+msgstr "Accueil"
+
+#: src/about/About.jsx:12
+msgid "This is the About page!"
+msgstr "Ceci est la page à propos!"
+
+#: src/home/Home.jsx:9
+msgid "This is the home page"
+msgstr "Ceci est la page d'accueuil"

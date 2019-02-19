@@ -1,4 +1,4 @@
 Language
 =============
 
-Project for **Multilingual Websites using React**, jan 2019
+Project for **Multilingual Websites using LinguiJs**, jan 2019

@@ -1,8 +1,9 @@
 {
-  "name": "react-laval",
+  "name": "react-lang",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@lingui/react": "^2.7.3",
     "bootstrap": "^4.2.1",
     "node-sass": "^4.11.0",
     "react": "^16.7.0",
@@ -21,6 +22,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "add-locale": "lingui add-locale",
+    "extract": "lingui extract",
+    "compile": "lingui compile",
     "api": "cd ../HrService && node .",
     "both": "concurrently \"npm run start\" \"npm run api\""
   },
@@ -35,6 +39,10 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@lingui/cli": "^2.7.3",
+    "@lingui/macro": "^2.7.3",
+    "babel-core": "^7.0.0-bridge.0",
     "concurrently": "^4.1.0"
   }
 }

@@ -1,0 +1,1 @@
+/* eslint-disable */module.exports={languageData:{"plurals":function(n,ord){if(ord)return n==1?"one":"other";return n>=0&&n<2?"one":"other"}},messages:{"About page":"\xC0 propos","About page!!!!!!":"\xC0 propos!!!!!!","Home page":"Accueil","This is the About page!":"Ceci est la page \xE0 propos!","This is the home page":"Ceci est la page d'accueuil"}};

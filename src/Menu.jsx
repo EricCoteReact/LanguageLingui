@@ -6,7 +6,7 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
+  NavLink,Input
 } from 'reactstrap';
 import {NavLink as RRNavLink} from 'react-router-dom'
 import logo from './logo.svg'; 
@@ -30,7 +30,7 @@ export default class Menu extends React.Component {
       <div className='mb-4'>
         <Navbar color="dark" dark expand="md">
           <NavbarBrand className="mr-5" tag={RRNavLink} to="/" exact> 
-             <img src={logo} style={{widht:'40px', height:'40px'}} alt="Logo" /> React Toronto
+             <img src={logo} style={{widht:'40px', height:'40px'}} alt="Logo" /> React Language
           </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
@@ -53,7 +53,15 @@ export default class Menu extends React.Component {
               <NavItem>
                 <NavLink tag={RRNavLink} to="/clock">Clock</NavLink>
               </NavItem>
-
+              <NavItem>
+                <NavLink tag={RRNavLink} to="/clock">Clock</NavLink>
+              </NavItem>
+              <Input name="selectLang"  className="ml-5" type="select"
+                     onChange={this.props.onChangeLanguage} value={this.props.language}>
+                 <option value="en">English</option>
+                 <option value="fr">Français</option>
+              </Input>
+             
             </Nav>
           </Collapse>
         </Navbar>

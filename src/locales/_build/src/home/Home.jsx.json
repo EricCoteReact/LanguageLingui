@@ -1,0 +1,18 @@
+{
+  "Home page": {
+    "origin": [
+      [
+        "src/home/Home.jsx",
+        8
+      ]
+    ]
+  },
+  "This is the home page": {
+    "origin": [
+      [
+        "src/home/Home.jsx",
+        9
+      ]
+    ]
+  }
+}

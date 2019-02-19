@@ -1,4 +1,4 @@
-import React, {lazy, Suspense} from 'react';
+import React from 'react';
 import Counter from './counter/Counter';
 import { Container } from 'reactstrap';
 import Menu from './Menu';
@@ -12,6 +12,14 @@ import NotFound from './404';
 import Todos from './todosState/Todos';
 import Clock from './clock/Clock';
 import About from './about/About';
+import { I18nProvider } from '@lingui/react'
+import catalogFr from './locales/fr/messages.js';
+import catalogEn from './locales/en/messages.js';
+
+const catalogs = { en: catalogEn, fr: catalogFr  };
+
+
+
 
 
 //npm install node-sass bootstrap reactstrap
@@ -19,33 +27,40 @@ import About from './about/About';
 //npm install redux react-redux redux-thunk redux-logger
 
 export default class App extends React.Component {
+    state={lang: "en"}
+
+    onChangeLanguage = (e) => {
+         this.setState({lang: e.target.value});
+    }
+
+    
     render() {
         return (
-            <BrowserRouter>
-                <>
-                    <Menu />
-                    <Container>
-                       <Suspense fallback={<div>Loading...</div>}   >
-                            <Switch>
-                                <Route path='/' exact component={Home} />
-                                <Route path='/about' component={About} />
-                                <Route path='/counter'
-                                    render={() => <Counter init="35" />} />
-                                <Route path='/employees'
-                                    component={Employees} />
-                                <Route exact path="/employee"
-                                    component={EmployeeDetails} />
-                                <Route path='/employee/:id'
-                                    component={EmployeeDetails} />
-                                <Route path="/todos" component={Todos} />
-                                <Route path="/clock" component={Clock} />
-                                <Route component={NotFound} />
-                            </Switch>
-                        </Suspense>
-                        <Footer />
-                    </Container>
-                </>
-            </BrowserRouter>
+            <I18nProvider language={this.state.lang} catalogs={catalogs}>
+                <BrowserRouter>
+                    <>
+                        <Menu onChangeLanguage={this.onChangeLanguage} language={this.state.lang} />
+                        <Container>
+                                <Switch>
+                                    <Route path='/' exact component={Home} />
+                                    <Route path='/about' component={About} />
+                                    <Route path='/counter'
+                                        render={() => <Counter init="35" />} />
+                                    <Route path='/employees'
+                                        component={Employees} />
+                                    <Route exact path="/employee"
+                                        component={EmployeeDetails} />
+                                    <Route path='/employee/:id'
+                                        component={EmployeeDetails} />
+                                    <Route path="/todos" component={Todos} />
+                                    <Route path="/clock" component={Clock} />
+                                    <Route component={NotFound} />
+                                </Switch>
+                            <Footer />
+                        </Container>
+                    </>
+                </BrowserRouter>
+            </I18nProvider>
         );
     }
 }
